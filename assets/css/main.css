@@ -16,6 +16,10 @@
         font-size: 2rem;
     } */
 
+
+    a{
+        text-decoration: none;
+    }
   
 
 
@@ -31,10 +35,69 @@
 
 }
 
+/* HEADER */
+
+
+/* header nav{
+     text-align: right;
+}
+
+header a{
+    font-family: 'nuptial_libertyregular';
+    font-size: 50px;
+    display: inline-block;
+}
+
+header a.active{
+    color: red;
+} 
+
+header nav a:not(:first-child){
+
+}
+    */
+
+
+header{
+
+    nav{
+        text-align: right;
+
+        & :not(:first-child){
+            margin-left: 20px;
+        }
+    }
+
+    a{
+        font-family: 'nuptial_libertyregular';
+        font-size: 50px;
+        display: inline-block;
+
+        
+
+        &.active{
+            color: red;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 li{
    list-style: cambodian;
    width: fit-content;
-   transition: color .5s ease 5s;
+   transition: color .5s ease 1s;
 }
 
 li::before{
