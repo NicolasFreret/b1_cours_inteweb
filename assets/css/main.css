@@ -17,9 +17,7 @@
     } */
 
 
-    a{
-        text-decoration: none;
-    }
+  
   
 
 
@@ -55,11 +53,38 @@ header a.active{
 header nav a:not(:first-child){
 
 }
+
+header nav a:hover{
+
+}
     */
+
+:root{
+    --alice: #fcba03;
+    --white:#fff;
+    --black:#000;
+}
+
+*,::after,:before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+  a{
+        text-decoration: none;
+   }
 
 
 header{
-
+    padding: 20px;
+    background-color: var(--alice);
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    z-index: 9;
     nav{
         text-align: right;
 
@@ -72,12 +97,21 @@ header{
         font-family: 'nuptial_libertyregular';
         font-size: 50px;
         display: inline-block;
-
+        color:var(--black);
+        will-change: color;
+        transition: color .3s linear;
+        
         
 
         &.active{
             color: red;
         }
+
+        &:hover{
+            color: var(--white);
+        }
+
+        
     }
 
 }
@@ -125,9 +159,44 @@ li:hover{
 .square{
     border: #000 5px solid;
     width: 300px;
+    height:200vh;
     text-align: center;
     margin-inline: auto;
     border-top-left-radius: 5px;
+    position: relative;
+    background-color: var(--white);
+    top:100px;
+
+    span{
+        position: sticky;
+
+        top:100px;
+    }
+
+    div{
+        font-size: 2rem;
+        position: absolute;
+
+        &:last-child{
+            bottom:10px;
+            right:10px;
+        }
+
+        &:first-child{
+            top:10px;
+            left:10px;
+        }
+
+        &:nth-child(2){
+            bottom:10px;
+            left:10px;
+        }
+
+        &:nth-child(3){
+            top:10px;
+            right:10px;
+        }
+    }
 }
 
 ._libertinus-keyboard-regular {
@@ -136,8 +205,44 @@ li:hover{
   font-style: normal;
 }
 
+.fixed{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom:50px;
+    right: 50px;
+    z-index: 10;
+}
 
 
+
+@media screen and (max-width:1000px){
+
+    header{
+        nav{
+
+            & :not(:first-child){
+                margin-left: 10px;
+            }
+        }
+
+        a{
+            font-size: 40px;
+            
+        }
+
+}
+
+}
+
+@media screen and (max-width:700px){
+    
+}
 
 
 
