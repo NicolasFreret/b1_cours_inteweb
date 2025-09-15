@@ -85,6 +85,19 @@ header .hbg{
 header .hbg span{
 
 }
+
+header .hbg span:first-child{
+
+}
+
+header .hbg span:nth-child(2){
+
+}
+
+header .hbg span:last-child{
+
+}
+
     */
 
 :root{
@@ -97,7 +110,7 @@ header .hbg span{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: none;
+
 }
 
 body{
@@ -123,20 +136,37 @@ header{
     left:0;
     z-index: 9;
 
-    .hbg{
-        display: inline-block;
-        height: 40px;
-        width: 40px;
-        background-color: coral;
-        position: relative;
-
-        span{
+     span{
             position: absolute;
             width: 100%;
-            height: 2px;
+            height: 4px;
             background-color: var(--white);
             left:0;
+            border-radius: 10px;
+            /* top: calc( var(--pos) * 10px ); */
+
+            &:first-child{
+                top:10px;
+            }
+
+            &:nth-child(2){
+                top:20px;
+            }
+
+            &:last-child{
+                top:30px;
+            }
+
         }
+
+    .hbg{
+        display: none;
+        height: 40px;
+        width: 40px;
+       
+        position: relative;
+
+       
     
     }
 
@@ -277,6 +307,54 @@ li:hover{
 
 
 
+
+.formulaire textarea{
+    display: block;
+    width: 80%;
+    height: 300px;
+    border: var(--alice) solid 3px;
+    margin: 0 auto;
+ 
+}
+
+table{
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+}
+
+table tr:nth-child(even){
+    background-color: lightgray;
+}
+
+table td,
+table th{
+    border: 2px black solid;
+    padding: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width:1000px){
 
     header{
@@ -297,6 +375,29 @@ li:hover{
 }
 
 @media screen and (max-width:700px){
+
+    header{
+        position: relative;
+        height: 80px;
+        nav{
+            display: none;
+        }
+
+        
+
+        .hbg{
+            position: absolute;
+            right:30px;
+        
+            display: inline-block;
+
+            span{
+                background-color: red;
+            }
+
+            
+        }
+    }
     
 }
 
