@@ -11,6 +11,8 @@
     --pink:#F27D72;
     --white:#fff;
     --black:#1A2B40;
+    --grey:#F8F8F8;
+    --shadow:rgba(19, 43, 64, .1);
 
 }
 
@@ -113,11 +115,46 @@ a{
     z-index: -3;
 }
 
-h1{
+h1,
+.h2{
     font-family: 'Cookie', cursive;
+}
+
+h1{
     font-size: 8rem;
     line-height: 9.3rem;
     font-weight: 400;
+}
+
+
+.h2{
+    font-size: 6.4rem;
+    line-height: 7.7rem;
+    font-weight: 300;
+    color: var(--pink);
+    position: relative;
+    width: fit-content;
+    margin-bottom: 2rem;
+
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 5px;
+        background-image: url('../img/underline.svg');
+        /* background-repeat: no-repeat; */
+    }
+}
+
+.h2.white{
+    color: var(--white);
+
+    &::before{
+        background-image: url('../img/underline-white.svg');
+        /* background-repeat: no-repeat; */
+    }
 }
 
 
@@ -199,11 +236,13 @@ header .hbg span{
     display: flex;
     align-items: center;
     text-align: center;
+    color: var(--white);
 }
 
 
-.hero h1{
-    color: var(--white);
+.hero p{
+    font-size: 2.2rem;
+    line-height: 3.4rem;
 }
 
 .hero img{
@@ -211,8 +250,83 @@ header .hbg span{
 }
 
 
+/* SECTION SERVICE */
+
+.services{
+    background-color: var(--grey);
+
+    .h2{
+         margin: 0 auto;
+    }
+}
+
+.services .title{
+    text-align: center;
+}
 
 
+
+.card-massage{
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 3px;
+    box-shadow: 10px 10px 10px var(--shadow);
+}
+
+.card-massage_title{
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+}
+
+.card-massage_price,
+.card-massage details{
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    font-weight: 400;
+    
+}
+
+.card-massage details{
+    margin-top: 1rem; 
+    display: flex;
+    flex-flow: column;
+
+}
+
+.card-massage_price{
+    font-style: italic;
+}
+
+.card-massage summary{
+    color: var(--pink);
+    order:1;
+
+    [open] &{
+        transform: rotateX(180deg);
+    }
+
+    [open] & :last-child{
+        display: inline-block;
+        transform: rotateX(-180deg);
+    }
+
+    [open] & :first-child{
+        display: none;
+    }
+
+    :last-child{
+        display: none;
+    }
+}
+
+
+
+/* SECTION PLANITY */
+.planity{
+    background-color: var(--black);
+    color: var(--white);
+}
 
 
 
@@ -371,6 +485,14 @@ header .hbg span{
         width: 90%;
     }
 
+    h1{
+        font-size: 6rem;
+        line-height: 5rem;
+    }
+
+ 
+
+
     header{
         flex-flow: wrap;
     }
@@ -388,6 +510,11 @@ header .hbg span{
         gap: 1rem;
         height: 0;
         overflow: hidden;
+    }
+
+    .hero p{
+        font-size: 2rem;
+        line-height: 3rem;
     }
 
     .col-xs-1{
